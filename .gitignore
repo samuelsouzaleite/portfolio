@@ -1,0 +1,7 @@
+# Ferramentas locais de preview / editor
+.claude/
+.vscode/
+
+# Arquivos de sistema
+Thumbs.db
+.DS_Store

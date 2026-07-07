@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfólio de Samuel Souza Leite, desenvolvedor fullstack." />
+    <title>Samuel Souza Leite | Desenvolvedor Fullstack</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="grid-overlay" aria-hidden="true"></div>
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#home" class="logo">SSL<span>.dev</span></a>
+
+            <div class="nav-right">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link active" data-i18n="nav_home">Início</a></li>
+                    <li><a href="#sobre" class="nav-link" data-i18n="nav_about">Sobre mim</a></li>
+                    <li><a href="#especializacoes" class="nav-link" data-i18n="nav_services">Especializações</a></li>
+                    <li><a href="#projetos" class="nav-link" data-i18n="nav_projects">Projetos</a></li>
+                    <li><a href="#habilidades" class="nav-link" data-i18n="nav_skills">Habilidades</a></li>
+                    <li><a href="#contato" class="nav-link" data-i18n="nav_contact">Contato</a></li>
+                </ul>
+
+                <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
+                    <button type="button" class="lang-btn active" data-lang="pt">PT</button>
+                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                </div>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="container hero-content">
+                <div class="hero-text reveal">
+                    <p class="eyebrow" data-i18n="hero_eyebrow"># Olá, eu sou</p>
+                    <h1>SAMUEL <span>SOUZA LEITE</span></h1>
+                    <h2><span id="typingText"></span><span class="cursor">_</span></h2>
+                    <p class="hero-description" data-i18n="hero_description">
+                        Desenvolvedor fullstack apaixonado por criar soluções web modernas,
+                        responsivas e funcionais, unindo design, performance e código limpo.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projetos" class="btn btn-primary" data-i18n="hero_btn_projects">Ver projetos</a>
+                        <a href="#contato" class="btn btn-outline" data-i18n="hero_btn_contact">Fale comigo</a>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:contato.samuelsl@gmail.com" aria-label="E-mail">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-image reveal">
+                    <div class="image-frame">
+                        <img src="assets/img/samuel-perfil.png" alt="Foto de Samuel Souza Leite" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section about" id="sobre">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 data-i18n="about_title">Sobre mim</h2>
+                    <p data-i18n="about_subtitle">Minha trajetória e motivação na tecnologia</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-illustration reveal">
+                        <img src="assets/img/samuel-perfil.png" alt="Ilustração de Samuel" />
+                    </div>
+
+                    <div class="about-text reveal">
+                        <h3 data-i18n="about_h3">Desenvolvedor Fullstack em evolução constante</h3>
+                        <p data-i18n="about_p1">
+                            Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico.
+                            Meu primeiro contato com programação foi em 2022, quando ingressei em uma faculdade,
+                            e desde então venho estudando, praticando e desenvolvendo projetos para transformar
+                            ideias em soluções reais.
+                        </p>
+                        <p data-i18n="about_p2">
+                            Meus setores de atuação incluem desenvolvimento web, sistemas internos, automações e aplicações
+                            que melhoram processos dentro de empresas. Busco criar interfaces agradáveis,
+                            organizadas e responsivas, sem perder o foco na lógica e na funcionalidade.
+                        </p>
+
+                        <div class="about-info">
+                            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="about_info_location">Brasil</span></span>
+                            <span><i class="fa-solid fa-code"></i> <span data-i18n="about_info_role">Fullstack</span></span>
+                            <span><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="about_info_edu">Sistemas de Informação</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section services" id="especializacoes">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 data-i18n="services_title">Especializações</h2>
+                    <p data-i18n="services_subtitle">Áreas onde posso contribuir</p>
+                </div>
+
+                <div class="cards-grid">
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3 data-i18n="service_web_title">Desenvolvimento Web</h3>
+                        <p data-i18n="service_web_desc">Criação de páginas, landing pages e interfaces responsivas com HTML, CSS e JavaScript.</p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-server"></i>
+                        <h3 data-i18n="service_back_title">Back-end</h3>
+                        <p data-i18n="service_back_desc">Construção de regras de negócio, APIs e integrações utilizando tecnologias como C# e Node.js.</p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-database"></i>
+                        <h3 data-i18n="service_db_title">Banco de Dados</h3>
+                        <p data-i18n="service_db_desc">Modelagem e manipulação de dados para sistemas, relatórios e aplicações internas.</p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-gears"></i>
+                        <h3 data-i18n="service_auto_title">Automações</h3>
+                        <p data-i18n="service_auto_desc">Automação de tarefas repetitivas e criação de ferramentas para melhorar processos.</p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                        <h3 data-i18n="service_resp_title">Responsividade</h3>
+                        <p data-i18n="service_resp_desc">Layouts adaptáveis para celular, tablet e desktop, mantendo boa experiência visual.</p>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h3 data-i18n="service_ui_title">UI Moderna</h3>
+                        <p data-i18n="service_ui_desc">Interfaces com visual atual, animações suaves, boa hierarquia e foco na usabilidade.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section projects" id="projetos">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 data-i18n="projects_title">Projetos</h2>
+                    <p data-i18n="projects_subtitle">Alguns trabalhos e ideias em desenvolvimento</p>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>SistemaSolarIA</span></div>
+                        <div class="project-body">
+                            <h3>SistemaSolarIA</h3>
+                            <p data-i18n="project_solar_desc">Sistema voltado para geração e automação de documentos para projetos solares.</p>
+                            <div class="techs"><span>C#</span><span data-i18n="tech_pdf">PDF</span><span data-i18n="tech_automation">Automação</span></div>
+                            <span class="project-badge" data-i18n="project_pro_tag">Projeto profissional</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>Brawlsileirão</span></div>
+                        <div class="project-body">
+                            <h3>Brawlsileirão</h3>
+                            <p data-i18n="project_brawl_desc">Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.</p>
+                            <div class="techs"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                            <a class="project-link" href="https://github.com/samuelsouzaleite/brawlsileirao" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>App Termo</span></div>
+                        <div class="project-body">
+                            <h3 data-i18n="project_termo_title">App de Jogo (estilo Termo)</h3>
+                            <p data-i18n="project_termo_desc">Aplicativo mobile inspirado no jogo Termo, desenvolvido com Flutter e Dart.</p>
+                            <div class="techs"><span>Flutter</span><span>Dart</span><span data-i18n="tech_mobile">Mobile</span></div>
+                            <a class="project-link" href="https://github.com/samuelsouzaleite/app_jogo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>Landing Page</span></div>
+                        <div class="project-body">
+                            <h3 data-i18n="project_landing_title">Landing Page de Jogos</h3>
+                            <p data-i18n="project_landing_desc">Página visual para apresentação de conteúdo gamer, com foco em layout e estilo.</p>
+                            <div class="techs"><span>HTML</span><span>CSS</span></div>
+                            <a class="project-link" href="https://github.com/samuelsouzaleite/Landing-page-site-de-jogos" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>Web PHP</span></div>
+                        <div class="project-body">
+                            <h3 data-i18n="project_php_title">Site com PHP</h3>
+                            <p data-i18n="project_php_desc">Projeto web utilizando PHP, HTML e CSS para praticar estrutura e páginas dinâmicas.</p>
+                            <div class="techs"><span>PHP</span><span>HTML</span><span>CSS</span></div>
+                            <a class="project-link" href="https://github.com/samuelsouzaleite/Site-com-PHP-HTML-E-CSS" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal">
+                        <div class="project-image"><span>The Last of Us</span></div>
+                        <div class="project-body">
+                            <h3 data-i18n="project_tlou_title">Layout Responsivo</h3>
+                            <p data-i18n="project_tlou_desc">Página web responsiva com temática da série The Last of Us, focada em responsividade.</p>
+                            <div class="techs"><span>HTML</span><span>CSS</span><span data-i18n="tech_responsive">Responsivo</span></div>
+                            <a class="project-link" href="https://github.com/samuelsouzaleite/Layout-Responsivo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects-cta reveal">
+                    <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+                        <i class="fa-brands fa-github"></i> <span data-i18n="projects_all">Ver todos no GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section skills" id="habilidades">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 data-i18n="skills_title">Habilidades</h2>
+                    <p data-i18n="skills_subtitle">Tecnologias que fazem parte da minha rotina</p>
+                </div>
+
+                <div class="skills-layout">
+                    <div class="skills-list reveal">
+                        <div class="skill-item" data-skill-pt="Estruturação de páginas web semânticas." data-skill-en="Structuring semantic web pages."><i class="fa-brands fa-html5"></i><span>HTML</span></div>
+                        <div class="skill-item" data-skill-pt="Estilização, responsividade e animações." data-skill-en="Styling, responsiveness and animations."><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
+                        <div class="skill-item" data-skill-pt="Interações, DOM e lógica front-end." data-skill-en="Interactions, DOM and front-end logic."><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                        <div class="skill-item" data-skill-pt="Sistemas, aplicações e automações." data-skill-en="Systems, applications and automations."><i class="fa-solid fa-code"></i><span>C#</span></div>
+                        <div class="skill-item" data-skill-pt="Scripts, lógica e manipulação de dados." data-skill-en="Scripts, logic and data manipulation."><i class="fa-brands fa-python"></i><span>Python</span></div>
+                        <div class="skill-item" data-skill-pt="Back-end e APIs com JavaScript." data-skill-en="Back-end and APIs with JavaScript."><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+                        <div class="skill-item" data-skill-pt="Páginas dinâmicas e aplicações web." data-skill-en="Dynamic pages and web applications."><i class="fa-brands fa-php"></i><span>PHP</span></div>
+                        <div class="skill-item" data-skill-pt="Banco de dados relacional." data-skill-en="Relational database."><i class="fa-solid fa-database"></i><span>MySQL</span></div>
+                    </div>
+
+                    <div class="skill-description reveal" id="skillDescription" data-i18n="skill_hint">
+                        Passe o mouse ou toque em uma habilidade para ver uma descrição.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact" id="contato">
+            <div class="container">
+                <div class="section-title reveal">
+                    <h2 data-i18n="contact_title">Vamos trabalhar juntos?</h2>
+                    <p data-i18n="contact_subtitle">Entre em contato comigo</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info reveal">
+                        <a href="mailto:contato.samuelsl@gmail.com"><i class="fa-solid fa-envelope"></i> contato.samuelsl@gmail.com</a>
+                        <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    </div>
+
+                    <form class="contact-form reveal" id="contactForm">
+                        <input type="text" name="nome" placeholder="Seu nome" data-i18n-placeholder="form_name" required />
+                        <input type="email" name="email" placeholder="Seu e-mail" data-i18n-placeholder="form_email" required />
+                        <input type="text" name="assunto" placeholder="Assunto" data-i18n-placeholder="form_subject" />
+                        <textarea name="mensagem" placeholder="Como posso ajudar?" rows="5" data-i18n-placeholder="form_message" required></textarea>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact_btn">Enviar mensagem</button>
+                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Samuel Souza Leite. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
