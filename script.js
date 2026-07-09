@@ -6,6 +6,11 @@ const skillItems = document.querySelectorAll(".skill-item");
 const skillDescription = document.getElementById("skillDescription");
 const langButtons = document.querySelectorAll(".lang-btn");
 const year = document.getElementById("year");
+const previewButtons = document.querySelectorAll(".project-preview");
+const videoModal = document.getElementById("videoModal");
+const videoModalPlayer = document.getElementById("videoModalPlayer");
+const videoModalTitle = document.getElementById("videoModalTitle");
+const videoModalDesc = document.getElementById("videoModalDesc");
 
 /* ---------- Configuração de contato (Formspree) ----------
    Envio profissional, direto pelo site (sem abrir o provedor de e-mail) e com
@@ -68,8 +73,9 @@ const translations = {
         tech_responsive: "Responsivo",
         project_pro_tag: "Projeto profissional",
         project_view: "Ver no GitHub",
+        project_watch: "Visualizar",
         project_brawl_desc: "Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.",
-        project_termo_title: "App de Jogo (estilo Termo)",
+        project_termo_title: "Palavriado",
         project_termo_desc: "Aplicativo mobile inspirado no jogo Termo, desenvolvido com Flutter e Dart.",
         project_landing_title: "Landing Page de Jogos",
         project_landing_desc: "Página visual para apresentação de conteúdo gamer, com foco em layout e estilo.",
@@ -151,8 +157,9 @@ const translations = {
         tech_responsive: "Responsive",
         project_pro_tag: "Professional project",
         project_view: "View on GitHub",
+        project_watch: "Preview",
         project_brawl_desc: "Web project made in partnership with artist Gustavo Almeida, blending code and original art.",
-        project_termo_title: "Word Game App (Wordle-style)",
+        project_termo_title: "Palavriado",
         project_termo_desc: "Mobile app inspired by the Wordle-style game 'Termo', built with Flutter and Dart.",
         project_landing_title: "Games Landing Page",
         project_landing_desc: "Visual page to showcase gaming content, focused on layout and style.",
@@ -191,6 +198,7 @@ const translations = {
 
 let currentLang = localStorage.getItem("lang") || "pt";
 let activeSkillItem = null;
+let activeVideoButton = null;
 
 function applyLanguage(lang) {
     currentLang = lang;
@@ -211,6 +219,11 @@ function applyLanguage(lang) {
     // Se uma habilidade estiver selecionada, atualiza a descrição no idioma novo
     if (activeSkillItem) {
         skillDescription.textContent = activeSkillItem.dataset[lang === "pt" ? "skillPt" : "skillEn"];
+    }
+
+    // Se o modal de vídeo estiver aberto, atualiza a descrição no idioma novo
+    if (activeVideoButton) {
+        videoModalDesc.textContent = activeVideoButton.dataset[lang === "pt" ? "descPt" : "descEn"];
     }
 
     langButtons.forEach((btn) => {
@@ -378,6 +391,47 @@ contactForm.addEventListener("submit", async (event) => {
         setStatus("form_error", "error");
     } finally {
         submitButton.disabled = false;
+    }
+});
+
+/* ---------- Modal de vídeo dos projetos ---------- */
+function openVideoModal(button) {
+    activeVideoButton = button;
+
+    videoModalTitle.textContent = button.dataset.title || "";
+    videoModalDesc.textContent = button.dataset[currentLang === "pt" ? "descPt" : "descEn"] || "";
+    videoModalPlayer.src = button.dataset.video;
+
+    videoModal.classList.add("open");
+    videoModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    // Tenta iniciar o vídeo (navegadores podem exigir interação; o clique já conta)
+    videoModalPlayer.play().catch(() => {});
+}
+
+function closeVideoModal() {
+    videoModal.classList.remove("open");
+    videoModal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+    videoModalPlayer.pause();
+    videoModalPlayer.removeAttribute("src");
+    videoModalPlayer.load(); // libera o download e reseta o player
+    activeVideoButton = null;
+}
+
+previewButtons.forEach((button) => {
+    button.addEventListener("click", () => openVideoModal(button));
+});
+
+videoModal.querySelectorAll("[data-close]").forEach((el) => {
+    el.addEventListener("click", closeVideoModal);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && videoModal.classList.contains("open")) {
+        closeVideoModal();
     }
 });
 
