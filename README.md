@@ -4,23 +4,23 @@ Portfólio pessoal de **desenvolvedor fullstack**, construído do zero com **HTM
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
-- 🎨 **Tema preto + vermelho** com detalhes em neon e fundo em grade
-- 🌐 **Alternador de idioma PT / EN** com a preferência salva no navegador
-- ⌨️ **Efeito de digitação** no hero e **animações de reveal** ao rolar a página
-- 🎬 **Modal de vídeo nos projetos** — botão "Visualizar" abre uma prévia do projeto rodando, com descrição
-- 📱 **Layout totalmente responsivo** (celular, tablet e desktop)
-- 📨 **Formulário de contato funcional** via [Formspree](https://formspree.io)
+- **Tema preto + vermelho** com detalhes em neon e fundo em grade
+- **Alternador de idioma PT / EN** com a preferência salva no navegador
+- **Efeito de digitação** no hero e **animações de reveal** ao rolar a página
+- **Modal de vídeo nos projetos** — botão "Visualizar" abre uma prévia do projeto rodando, com descrição
+- **Layout totalmente responsivo** (celular, tablet e desktop)
+- **Formulário de contato funcional** via [Formspree](https://formspree.io)
 
-## 🛠️ Tecnologias
+## Tecnologias
 
 - HTML5 semântico
 - CSS3 — Grid, Flexbox, animações e variáveis
 - JavaScript (Vanilla)
 - [Font Awesome](https://fontawesome.com) e [Google Fonts](https://fonts.google.com)
 
-## 📂 Projetos em destaque
+## Projetos em destaque
 
 | Projeto | Descrição | Tecnologias |
 | --- | --- | --- |
@@ -31,18 +31,11 @@ Portfólio pessoal de **desenvolvedor fullstack**, construído do zero com **HTM
 | **Layout Responsivo** | Página temática de *The Last of Us*, com foco em responsividade | HTML, CSS |
 | **Landing Page de Jogos** | Página visual para conteúdo gamer, com foco em layout | HTML, CSS |
 
-## 🚀 Como rodar localmente
+## Como rodar localmente
 
-Por ser um site estático, basta abrir o `index.html` no navegador. Para o carregamento correto dos assets, rode um servidor local simples:
+Por ser um site estático, basta abrir o `index.html` no navegador.
 
-```bash
-# Python 3
-python -m http.server 5500
-```
-
-Depois acesse `http://localhost:5500`.
-
-## 📁 Estrutura
+## Estrutura
 
 ```
 portfolio-samuel/
@@ -54,12 +47,3 @@ portfolio-samuel/
     └── videos/         # Vídeos de demonstração dos projetos
 ```
 
-## 📫 Contato
-
-- **E-mail:** contato.samuelsl@gmail.com
-- **LinkedIn:** [Samuel Souza Leite](https://www.linkedin.com/in/samuel-souza-leite-43281b252/)
-- **GitHub:** [@samuelsouzaleite](https://github.com/samuelsouzaleite)
-
----
-
-<sub>Feito com dedicação por Samuel Souza Leite.</sub>
