@@ -1,27 +1,39 @@
 # Portfólio — Samuel Souza Leite
 
-Portfólio pessoal de desenvolvedor fullstack, feito com HTML, CSS e JavaScript puro (sem frameworks).
+Portfólio pessoal de **desenvolvedor fullstack**, construído do zero com **HTML, CSS e JavaScript puro** (sem frameworks). Apresenta minha trajetória, habilidades e projetos, com um visual moderno em tema escuro e suporte a dois idiomas.
 
-## Destaques
+---
 
-- **Tema preto + vermelho** com detalhes em neon e fundo em grade
-- **Alternador de idioma PT / EN** com preferência salva no navegador
-- Efeito de digitação no hero, animações de reveal no scroll e menu responsivo
-- Seção de projetos com links diretos para os repositórios
-- Formulário de contato funcional via [Formspree](https://formspree.io)
-- Layout responsivo (celular, tablet e desktop)
+## ✨ Funcionalidades
 
-## Tecnologias
+- 🎨 **Tema preto + vermelho** com detalhes em neon e fundo em grade
+- 🌐 **Alternador de idioma PT / EN** com a preferência salva no navegador
+- ⌨️ **Efeito de digitação** no hero e **animações de reveal** ao rolar a página
+- 🎬 **Modal de vídeo nos projetos** — botão "Visualizar" abre uma prévia do projeto rodando, com descrição
+- 📱 **Layout totalmente responsivo** (celular, tablet e desktop)
+- 📨 **Formulário de contato funcional** via [Formspree](https://formspree.io)
+
+## 🛠️ Tecnologias
 
 - HTML5 semântico
-- CSS3 (Grid, Flexbox, animações, variáveis)
+- CSS3 — Grid, Flexbox, animações e variáveis
 - JavaScript (Vanilla)
 - [Font Awesome](https://fontawesome.com) e [Google Fonts](https://fonts.google.com)
 
-## Como rodar localmente
+## 📂 Projetos em destaque
 
-Por ser um site estático, basta abrir o `index.html` no navegador. Para uma experiência
-completa (com o carregamento correto dos assets), rode um servidor local simples:
+| Projeto | Descrição | Tecnologias |
+| --- | --- | --- |
+| **SistemaSolarIA** | Geração e automação de documentos para projetos solares | C#, PDF, Automação |
+| **Brawlsileirão** | Projeto web em parceria com o artista Gustavo Almeida, unindo código e arte | JavaScript, HTML, CSS |
+| **Palavriado** | Jogo de palavras mobile no estilo Termo/Wordle | Flutter, Dart |
+| **Site com PHP** | Sistema web com cadastro de usuários e páginas dinâmicas | PHP, HTML, CSS |
+| **Layout Responsivo** | Página temática de *The Last of Us*, com foco em responsividade | HTML, CSS |
+| **Landing Page de Jogos** | Página visual para conteúdo gamer, com foco em layout | HTML, CSS |
+
+## 🚀 Como rodar localmente
+
+Por ser um site estático, basta abrir o `index.html` no navegador. Para o carregamento correto dos assets, rode um servidor local simples:
 
 ```bash
 # Python 3
@@ -29,3 +41,25 @@ python -m http.server 5500
 ```
 
 Depois acesse `http://localhost:5500`.
+
+## 📁 Estrutura
+
+```
+portfolio-samuel/
+├── index.html          # Estrutura da página
+├── style.css           # Estilos e responsividade
+├── script.js           # Interações, traduções e modal de vídeo
+└── assets/
+    ├── img/            # Imagens (foto de perfil)
+    └── videos/         # Vídeos de demonstração dos projetos
+```
+
+## 📫 Contato
+
+- **E-mail:** contato.samuelsl@gmail.com
+- **LinkedIn:** [Samuel Souza Leite](https://www.linkedin.com/in/samuel-souza-leite-43281b252/)
+- **GitHub:** [@samuelsouzaleite](https://github.com/samuelsouzaleite)
+
+---
+
+<sub>Feito com dedicação por Samuel Souza Leite.</sub>
