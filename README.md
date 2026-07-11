@@ -29,7 +29,7 @@ Portfólio pessoal de **desenvolvedor fullstack**, construído do zero com **HTM
 | **Palavriado** | Jogo de palavras mobile no estilo Termo/Wordle | Flutter, Dart |
 | **Site com PHP** | Sistema web com cadastro de usuários e páginas dinâmicas | PHP, HTML, CSS |
 | **Layout Responsivo** | Página temática de *The Last of Us*, com foco em responsividade | HTML, CSS |
-| **Landing Page de Jogos** | Página visual para conteúdo gamer, com foco em layout | HTML, CSS |
+| **Jogo 2D (Unity)** | Jogo 2D desenvolvido na engine Unity, com mecânicas de gameplay, física e design de fases | Unity, C# |
 
 ## Como rodar localmente
 
