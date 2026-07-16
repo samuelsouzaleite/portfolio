@@ -101,9 +101,9 @@
                         <h3 data-i18n="about_h3">Desenvolvedor Fullstack em evolução constante</h3>
                         <p data-i18n="about_p1">
                             Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico.
-                            Meu primeiro contato com programação foi em 2022, quando ingressei em uma faculdade,
-                            e desde então venho estudando, praticando e desenvolvendo projetos para transformar
-                            ideias em soluções reais.
+                            Meu primeiro contato com programação foi em 2022, quando ingressei no Centro
+                            Universitário do Espírito Santo (UNESC), e desde então venho estudando, praticando
+                            e desenvolvendo projetos para transformar ideias em soluções reais.
                         </p>
                         <p data-i18n="about_p2">
                             Meus setores de atuação incluem desenvolvimento web, sistemas internos, automações e aplicações
@@ -297,22 +297,95 @@
                     <p data-i18n="skills_subtitle">Tecnologias que fazem parte da minha rotina</p>
                 </div>
 
-                <div class="skills-layout">
-                    <div class="skills-list reveal">
-                        <div class="skill-item" data-skill-pt="Estruturação de páginas web semânticas." data-skill-en="Structuring semantic web pages."><i class="fa-brands fa-html5"></i><span>HTML</span></div>
-                        <div class="skill-item" data-skill-pt="Estilização, responsividade e animações." data-skill-en="Styling, responsiveness and animations."><i class="fa-brands fa-css3-alt"></i><span>CSS</span></div>
-                        <div class="skill-item" data-skill-pt="Interações, DOM e lógica front-end." data-skill-en="Interactions, DOM and front-end logic."><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-                        <div class="skill-item" data-skill-pt="Sistemas, aplicações e automações." data-skill-en="Systems, applications and automations."><i class="fa-solid fa-code"></i><span>C#</span></div>
-                        <div class="skill-item" data-skill-pt="Scripts, lógica e manipulação de dados." data-skill-en="Scripts, logic and data manipulation."><i class="fa-brands fa-python"></i><span>Python</span></div>
-                        <div class="skill-item" data-skill-pt="Consultas e manipulação de bancos de dados relacionais." data-skill-en="Querying and manipulating relational databases."><i class="fa-solid fa-database"></i><span>SQL</span></div>
-                        <div class="skill-item" data-skill-pt="Páginas dinâmicas e aplicações web." data-skill-en="Dynamic pages and web applications."><i class="fa-brands fa-php"></i><span>PHP</span></div>
-                        <div class="skill-item" data-skill-pt="Backend, autenticação e banco de dados na nuvem." data-skill-en="Backend, authentication and cloud database."><i class="fa-solid fa-bolt"></i><span>Supabase</span></div>
-                        <div class="skill-item" data-skill-pt="Autenticação, banco em tempo real e hospedagem." data-skill-en="Authentication, realtime database and hosting."><i class="fa-solid fa-fire"></i><span>Firebase</span></div>
-                        <div class="skill-item" data-skill-pt="Desenvolvimento de aplicativos mobile multiplataforma." data-skill-en="Cross-platform mobile app development."><i class="fa-solid fa-mobile-screen-button"></i><span>Flutter/Dart</span></div>
+                <div class="skills-grid reveal">
+                    <div class="skill-item" data-skill-pt="Estruturação de páginas web semânticas." data-skill-en="Structuring semantic web pages.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-html">
+                            <i class="fa-brands fa-html5"></i><span>HTML</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-html">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Estruturação de páginas web semânticas.</p></div>
+                        </div>
                     </div>
 
-                    <div class="skill-description reveal" id="skillDescription" data-i18n="skill_hint">
-                        Passe o mouse ou toque em uma habilidade para ver uma descrição.
+                    <div class="skill-item" data-skill-pt="Estilização, responsividade e animações." data-skill-en="Styling, responsiveness and animations.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-css">
+                            <i class="fa-brands fa-css3-alt"></i><span>CSS</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-css">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Estilização, responsividade e animações.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Interações, DOM e lógica front-end." data-skill-en="Interactions, DOM and front-end logic.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-js">
+                            <i class="fa-brands fa-js"></i><span>JavaScript</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-js">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Interações, DOM e lógica front-end.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Sistemas, aplicações e automações." data-skill-en="Systems, applications and automations.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-csharp">
+                            <i class="fa-solid fa-code"></i><span>C#</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-csharp">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Sistemas, aplicações e automações.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Scripts, lógica e manipulação de dados." data-skill-en="Scripts, logic and data manipulation.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-python">
+                            <i class="fa-brands fa-python"></i><span>Python</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-python">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Scripts, lógica e manipulação de dados.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Consultas e manipulação de bancos de dados relacionais." data-skill-en="Querying and manipulating relational databases.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-sql">
+                            <i class="fa-solid fa-database"></i><span>SQL</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-sql">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Consultas e manipulação de bancos de dados relacionais.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Páginas dinâmicas e aplicações web." data-skill-en="Dynamic pages and web applications.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-php">
+                            <i class="fa-brands fa-php"></i><span>PHP</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-php">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Páginas dinâmicas e aplicações web.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Backend, autenticação e banco de dados na nuvem." data-skill-en="Backend, authentication and cloud database.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-supabase">
+                            <i class="fa-solid fa-bolt"></i><span>Supabase</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-supabase">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Backend, autenticação e banco de dados na nuvem.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Autenticação, banco em tempo real e hospedagem." data-skill-en="Authentication, realtime database and hosting.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-firebase">
+                            <i class="fa-solid fa-fire"></i><span>Firebase</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-firebase">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Autenticação, banco em tempo real e hospedagem.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item" data-skill-pt="Desenvolvimento de aplicativos mobile multiplataforma." data-skill-en="Cross-platform mobile app development.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-flutter">
+                            <i class="fa-solid fa-mobile-screen-button"></i><span>Flutter/Dart</span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-flutter">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Desenvolvimento de aplicativos mobile multiplataforma.</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -327,7 +400,7 @@
 
                 <div class="contact-content">
                     <div class="contact-info reveal">
-                        <a href="mailto:contato.samuelsl@gmail.com"><i class="fa-solid fa-envelope"></i> contato.samuelsl@gmail.com</a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.samuelsl@gmail.com&su=Contato%20via%20portf%C3%B3lio" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> contato.samuelsl@gmail.com</a>
                         <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
                         <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
                     </div>

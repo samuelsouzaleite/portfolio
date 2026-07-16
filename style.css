@@ -393,8 +393,7 @@ main,
 }
 
 .about-content,
-.contact-content,
-.skills-layout {
+.contact-content {
     display: grid;
     grid-template-columns: 0.8fr 1.2fr;
     align-items: center;
@@ -702,21 +701,29 @@ body.modal-open {
     overflow: hidden;
 }
 
-.skills-layout {
-    grid-template-columns: 1fr 1fr;
-}
-
-.skills-list {
+.skills-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    align-items: start;
     gap: 18px;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .skill-item {
+    position: relative;
+}
+
+.skill-toggle {
+    position: relative;
+    z-index: 2;
+    width: 100%;
     min-height: 112px;
     display: grid;
     place-items: center;
     gap: 8px;
+    padding: 12px;
+    font: inherit;
     border: 1px solid var(--border);
     border-radius: 18px;
     color: var(--primary);
@@ -725,31 +732,52 @@ body.modal-open {
     transition: 0.25s ease;
 }
 
-.skill-item:hover,
-.skill-item.active {
+.skill-toggle:hover,
+.skill-item.active .skill-toggle {
     background: var(--primary);
     color: #fff;
     box-shadow: var(--shadow);
     transform: translateY(-5px);
 }
 
-.skill-item i {
+.skill-toggle i {
     font-size: 2.5rem;
 }
 
-.skill-item span {
+.skill-toggle span {
     font-weight: 800;
 }
 
-.skill-description {
-    min-height: 230px;
+.skill-panel {
+    position: relative;
+    z-index: 1;
     display: grid;
-    place-items: center;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    transition: grid-template-rows 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+}
+
+/* Margem negativa encaixa o painel por baixo do botão, que o cobre via z-index */
+.skill-item.active .skill-panel {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: -26px;
+}
+
+.skill-panel-inner {
+    overflow: hidden;
+}
+
+.skill-panel-text {
+    margin: 0 8px;
+    padding: 38px 16px 18px;
     text-align: center;
-    padding: 34px;
+    font-size: 0.92rem;
+    line-height: 1.7;
     color: var(--text);
-    border-left: 2px solid var(--primary);
-    line-height: 1.8;
+    border: 1px solid var(--primary);
+    border-radius: 18px;
+    background: rgba(255, 36, 56, 0.08);
 }
 
 /* ---------- Status do formulário ---------- */
@@ -876,8 +904,7 @@ body.modal-open {
 
     .hero-content,
     .about-content,
-    .contact-content,
-    .skills-layout {
+    .contact-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
@@ -901,10 +928,6 @@ body.modal-open {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .skill-description {
-        border-left: 0;
-        border-top: 2px solid var(--primary);
-    }
 }
 
 @media (max-width: 620px) {
@@ -917,9 +940,12 @@ body.modal-open {
     }
 
     .cards-grid,
-    .project-grid,
-    .skills-list {
+    .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
 
     .hero h2 {

@@ -3,7 +3,6 @@ const navMenu = document.getElementById("navMenu");
 const navLinks = document.querySelectorAll(".nav-link");
 const typingText = document.getElementById("typingText");
 const skillItems = document.querySelectorAll(".skill-item");
-const skillDescription = document.getElementById("skillDescription");
 const langButtons = document.querySelectorAll(".lang-btn");
 const year = document.getElementById("year");
 const previewButtons = document.querySelectorAll(".project-preview");
@@ -43,7 +42,7 @@ const translations = {
         about_title: "Sobre mim",
         about_subtitle: "Minha trajetória e motivação na tecnologia",
         about_h3: "Desenvolvedor Fullstack em evolução constante",
-        about_p1: "Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico. Meu primeiro contato com programação foi em 2022, quando ingressei em uma faculdade, e desde então venho estudando, praticando e desenvolvendo projetos para transformar ideias em soluções reais.",
+        about_p1: "Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico. Meu primeiro contato com programação foi em 2022, quando ingressei no Centro Universitário do Espírito Santo (UNESC), e desde então venho estudando, praticando e desenvolvendo projetos para transformar ideias em soluções reais.",
         about_p2: "Meus setores de atuação incluem desenvolvimento web, sistemas internos, automações e aplicações que melhoram processos dentro de empresas. Busco criar interfaces agradáveis, organizadas e responsivas, sem perder o foco na lógica e na funcionalidade.",
         about_info_location: "Brasil",
         about_info_role: "Fullstack",
@@ -87,7 +86,6 @@ const translations = {
 
         skills_title: "Habilidades",
         skills_subtitle: "Tecnologias que fazem parte da minha rotina",
-        skill_hint: "Passe o mouse ou toque em uma habilidade para ver uma descrição.",
 
         contact_title: "Vamos trabalhar juntos?",
         contact_subtitle: "Entre em contato comigo",
@@ -127,7 +125,7 @@ const translations = {
         about_title: "About me",
         about_subtitle: "My journey and motivation in technology",
         about_h3: "Fullstack developer in constant evolution",
-        about_p1: "I was born in 2003 and have always been passionate about the tech world. My first contact with programming was in 2022, when I joined a university, and since then I've been studying, practicing and building projects to turn ideas into real solutions.",
+        about_p1: "I was born in 2003 and have always been passionate about the tech world. My first contact with programming was in 2022, when I joined Centro Universitário do Espírito Santo (UNESC), and since then I've been studying, practicing and building projects to turn ideas into real solutions.",
         about_p2: "My areas of work include web development, internal systems, automations and applications that improve processes within companies. I aim to build pleasant, organized and responsive interfaces without losing focus on logic and functionality.",
         about_info_location: "Brazil",
         about_info_role: "Fullstack",
@@ -171,7 +169,6 @@ const translations = {
 
         skills_title: "Skills",
         skills_subtitle: "Technologies that are part of my routine",
-        skill_hint: "Hover or tap a skill to see a description.",
 
         contact_title: "Let's work together?",
         contact_subtitle: "Get in touch with me",
@@ -197,7 +194,6 @@ const translations = {
 };
 
 let currentLang = localStorage.getItem("lang") || "pt";
-let activeSkillItem = null;
 let activeVideoButton = null;
 
 function applyLanguage(lang) {
@@ -216,10 +212,11 @@ function applyLanguage(lang) {
         if (dict[key] !== undefined) el.placeholder = dict[key];
     });
 
-    // Se uma habilidade estiver selecionada, atualiza a descrição no idioma novo
-    if (activeSkillItem) {
-        skillDescription.textContent = activeSkillItem.dataset[lang === "pt" ? "skillPt" : "skillEn"];
-    }
+    // Atualiza a descrição de cada habilidade no idioma novo
+    skillItems.forEach((item) => {
+        item.querySelector(".skill-panel-text").textContent =
+            item.dataset[lang === "pt" ? "skillPt" : "skillEn"];
+    });
 
     // Se o modal de vídeo estiver aberto, atualiza a descrição no idioma novo
     if (activeVideoButton) {
@@ -328,15 +325,21 @@ document.querySelectorAll(".reveal").forEach((element) => {
 
 /* ---------- Habilidades ---------- */
 skillItems.forEach((item) => {
-    const showSkill = () => {
-        skillItems.forEach((skill) => skill.classList.remove("active"));
-        item.classList.add("active");
-        activeSkillItem = item;
-        skillDescription.textContent = item.dataset[currentLang === "pt" ? "skillPt" : "skillEn"];
-    };
+    const toggle = item.querySelector(".skill-toggle");
 
-    item.addEventListener("mouseenter", showSkill);
-    item.addEventListener("click", showSkill);
+    toggle.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("active");
+
+        skillItems.forEach((skill) => {
+            skill.classList.remove("active");
+            skill.querySelector(".skill-toggle").setAttribute("aria-expanded", "false");
+        });
+
+        if (willOpen) {
+            item.classList.add("active");
+            toggle.setAttribute("aria-expanded", "true");
+        }
+    });
 });
 
 /* ---------- Formulário de contato ---------- */
