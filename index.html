@@ -4,408 +4,506 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfólio de Samuel Souza Leite, desenvolvedor fullstack." />
+    <meta name="theme-color" content="#f2ede3" />
     <title>Samuel Souza Leite | Desenvolvedor Fullstack</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
-    <header class="header" id="header">
-        <nav class="navbar container">
-            <a href="#home" class="logo">SSL<span>.dev</span></a>
+    <header class="masthead" id="header">
+        <div class="masthead-inner">
+            <a href="#home" class="wordmark">
+                <span class="wordmark-mark">S<span>/</span>S<span>/</span>L</span>
+                <span class="wordmark-role" data-i18n="wordmark_role">Dev. Fullstack</span>
+            </a>
 
-            <div class="nav-right">
+            <nav class="masthead-nav" aria-label="Índice">
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#home" class="nav-link active" data-i18n="nav_home">Início</a></li>
-                    <li><a href="#sobre" class="nav-link" data-i18n="nav_about">Sobre mim</a></li>
-                    <li><a href="#especializacoes" class="nav-link" data-i18n="nav_services">Especializações</a></li>
-                    <li><a href="#projetos" class="nav-link" data-i18n="nav_projects">Projetos</a></li>
-                    <li><a href="#habilidades" class="nav-link" data-i18n="nav_skills">Habilidades</a></li>
-                    <li><a href="#contato" class="nav-link" data-i18n="nav_contact">Contato</a></li>
+                    <li><a href="#home" class="nav-link active"><i class="nav-num">01</i><span data-i18n="nav_home">Início</span></a></li>
+                    <li><a href="#sobre" class="nav-link"><i class="nav-num">02</i><span data-i18n="nav_about">Sobre mim</span></a></li>
+                    <li><a href="#especializacoes" class="nav-link"><i class="nav-num">03</i><span data-i18n="nav_services">Especializações</span></a></li>
+                    <li><a href="#projetos" class="nav-link"><i class="nav-num">04</i><span data-i18n="nav_projects">Projetos</span></a></li>
+                    <li><a href="#habilidades" class="nav-link"><i class="nav-num">05</i><span data-i18n="nav_skills">Habilidades</span></a></li>
+                    <li><a href="#contato" class="nav-link"><i class="nav-num">06</i><span data-i18n="nav_contact">Contato</span></a></li>
                 </ul>
+            </nav>
 
+            <div class="masthead-tools">
                 <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
-                    <button type="button" class="lang-btn active" data-lang="pt">PT</button>
-                    <button type="button" class="lang-btn" data-lang="en">EN</button>
+                    <button type="button" class="lang-btn active" data-lang="pt">pt</button>
+                    <span class="lang-sep">/</span>
+                    <button type="button" class="lang-btn" data-lang="en">en</button>
                 </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
-                    <span></span>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>
                     <span></span>
                 </button>
             </div>
-        </nav>
+        </div>
+        <div class="progress" id="progress" aria-hidden="true"></div>
     </header>
 
     <main>
-        <section class="hero section" id="home">
-            <div class="container hero-content">
-                <div class="hero-text reveal">
-                    <p class="eyebrow" data-i18n="hero_eyebrow"># Olá, eu sou</p>
-                    <h1>SAMUEL <span>SOUZA LEITE</span></h1>
-                    <h2><span id="typingText"></span><span class="cursor">_</span></h2>
-                    <p class="hero-description" data-i18n="hero_description">
-                        Desenvolvedor fullstack apaixonado por criar soluções web modernas,
-                        responsivas e funcionais, unindo design, performance e código limpo.
+        <section class="hero" id="home">
+            <div class="shell hero-shell">
+                <p class="hero-kicker reveal" style="--d:0">
+                    <span data-i18n="hero_eyebrow">Desenvolvedor fullstack</span>
+                    <span class="dot">·</span>
+                    <span data-i18n="hero_place">Espírito Santo, Brasil</span>
+                </p>
+
+                <h1 class="hero-name reveal" style="--d:1">
+                    <span class="hero-name-first">Samuel</span>
+                    <span class="hero-name-last">Souza Leite</span>
+                </h1>
+
+                <div class="hero-status reveal" style="--d:2">
+                    <span class="hero-status-label" data-i18n="hero_status">no momento</span>
+                    <span class="hero-status-value"><span id="typingText"></span><span class="cursor" aria-hidden="true"></span></span>
+                </div>
+
+                <p class="hero-description reveal" style="--d:3" data-i18n="hero_description">
+                    Construo sistemas web, aplicações internas e automações que resolvem
+                    problemas reais de empresas — com atenção igual à lógica do back-end e ao
+                    acabamento da interface.
+                </p>
+
+                <div class="hero-links reveal" style="--d:4">
+                    <a href="#projetos" class="btn btn-solid" data-i18n="hero_btn_projects">Ver projetos</a>
+                    <a href="#contato" class="btn btn-ghost" data-i18n="hero_btn_contact">Fale comigo</a>
+                </div>
+
+                <div class="hero-social reveal" style="--d:5">
+                    <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer" class="link-arrow">LinkedIn</a>
+                    <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" class="link-arrow">GitHub</a>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.samuelsl@gmail.com&su=Contato%20via%20portf%C3%B3lio" target="_blank" rel="noopener noreferrer" class="link-arrow" data-i18n="hero_email">E-mail</a>
+                </div>
+
+                <figure class="portrait reveal" style="--d:2">
+                    <span class="stamp" data-i18n="hero_stamp">desde 2003</span>
+                    <div class="portrait-frame">
+                        <img src="assets/img/fotoperfil.webp" alt="Retrato de Samuel Souza Leite" width="640" height="800" />
+                    </div>
+                    <figcaption>
+                        <span data-i18n="portrait_caption">Samuel S. Leite, retrato</span>
+                        <span class="dot">·</span>
+                        <span>ES / BR</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section" id="sobre">
+            <div class="shell">
+                <div class="sec-head reveal">
+                    <span class="sec-num">02</span>
+                    <h2 data-i18n="about_title">Sobre mim</h2>
+                    <p class="sec-sub" data-i18n="about_subtitle">Minha trajetória e motivação na tecnologia</p>
+                </div>
+
+                <div class="about-grid">
+                    <p class="about-lead reveal" data-i18n="about_lead">
+                        Nasci em 2003 e nunca soube ficar longe de um computador. Hoje transformo
+                        essa curiosidade em software que empresas usam todos os dias.
                     </p>
 
-                    <div class="hero-actions">
-                        <a href="#projetos" class="btn btn-primary" data-i18n="hero_btn_projects">Ver projetos</a>
-                        <a href="#contato" class="btn btn-outline" data-i18n="hero_btn_contact">Fale comigo</a>
-                    </div>
-
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.samuelsl@gmail.com&su=Contato%20via%20portf%C3%B3lio" target="_blank" rel="noopener noreferrer" aria-label="E-mail">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-image reveal">
-                    <div class="image-frame">
-                        <div class="image-crop">
-                            <img src="assets/img/fotoperfil.webp" alt="Foto de Samuel Souza Leite" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section about" id="sobre">
-            <div class="container">
-                <div class="section-title reveal">
-                    <h2 data-i18n="about_title">Sobre mim</h2>
-                    <p data-i18n="about_subtitle">Minha trajetória e motivação na tecnologia</p>
-                </div>
-
-                <div class="about-content">
-                    <div class="about-text reveal">
-                        <h3 data-i18n="about_h3">Desenvolvedor Fullstack em evolução constante</h3>
+                    <div class="about-body reveal" style="--d:1">
                         <p data-i18n="about_p1">
-                            Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico.
                             Meu primeiro contato com programação foi em 2022, quando ingressei no Centro
-                            Universitário do Espírito Santo (UNESC), e desde então venho estudando, praticando
-                            e desenvolvendo projetos para transformar ideias em soluções reais.
+                            Universitário do Espírito Santo (UNESC). De lá para cá, foram anos estudando,
+                            praticando e desenvolvendo projetos para transformar ideias em soluções reais.
                         </p>
                         <p data-i18n="about_p2">
-                            Meus setores de atuação incluem desenvolvimento web, sistemas internos, automações e aplicações
-                            que melhoram processos dentro de empresas. Busco criar interfaces agradáveis,
-                            organizadas e responsivas, sem perder o foco na lógica e na funcionalidade.
+                            Atuo em desenvolvimento web, sistemas internos, automações e aplicações que
+                            melhoram processos dentro de empresas. Busco interfaces agradáveis e
+                            organizadas, sem nunca perder o foco na lógica e na funcionalidade.
                         </p>
-
-                        <div class="about-info">
-                            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="about_info_location">Brasil</span></span>
-                            <span><i class="fa-solid fa-code"></i> <span data-i18n="about_info_role">Fullstack</span></span>
-                            <span><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="about_info_edu">Sistemas de Informação</span></span>
-                        </div>
                     </div>
+
+                    <dl class="about-meta reveal" style="--d:2">
+                        <div>
+                            <dt data-i18n="about_label_location">Local</dt>
+                            <dd data-i18n="about_info_location">Espírito Santo, Brasil</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="about_label_role">Atuação</dt>
+                            <dd data-i18n="about_info_role">Fullstack</dd>
+                        </div>
+                        <div>
+                            <dt data-i18n="about_label_edu">Formação</dt>
+                            <dd data-i18n="about_info_edu">Sistemas de Informação — UNESC</dd>
+                        </div>
+                    </dl>
                 </div>
             </div>
         </section>
 
-        <section class="section services" id="especializacoes">
-            <div class="container">
-                <div class="section-title reveal">
+        <section class="section section--band" id="especializacoes">
+            <div class="shell">
+                <div class="sec-head reveal">
+                    <span class="sec-num">03</span>
                     <h2 data-i18n="services_title">Especializações</h2>
-                    <p data-i18n="services_subtitle">Áreas onde posso contribuir</p>
+                    <p class="sec-sub" data-i18n="services_subtitle">Áreas onde posso contribuir</p>
                 </div>
 
-                <div class="cards-grid">
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-laptop-code"></i>
+                <ol class="fields">
+                    <li class="field reveal">
+                        <span class="field-num">01</span>
                         <h3 data-i18n="service_web_title">Desenvolvimento Web</h3>
                         <p data-i18n="service_web_desc">Criação de páginas, landing pages e interfaces responsivas com HTML, CSS e JavaScript.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-server"></i>
+                    </li>
+                    <li class="field reveal">
+                        <span class="field-num">02</span>
                         <h3 data-i18n="service_back_title">Back-end</h3>
                         <p data-i18n="service_back_desc">Construção de regras de negócio, APIs e integrações utilizando tecnologias como C# e PHP.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-database"></i>
+                    </li>
+                    <li class="field reveal">
+                        <span class="field-num">03</span>
                         <h3 data-i18n="service_db_title">Banco de Dados</h3>
                         <p data-i18n="service_db_desc">Modelagem e manipulação de dados para sistemas, relatórios e aplicações internas.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-gears"></i>
+                    </li>
+                    <li class="field reveal">
+                        <span class="field-num">04</span>
                         <h3 data-i18n="service_auto_title">Automações</h3>
                         <p data-i18n="service_auto_desc">Automação de tarefas repetitivas e criação de ferramentas para melhorar processos.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </li>
+                    <li class="field reveal">
+                        <span class="field-num">05</span>
                         <h3 data-i18n="service_resp_title">Responsividade</h3>
                         <p data-i18n="service_resp_desc">Layouts adaptáveis para celular, tablet e desktop, mantendo boa experiência visual.</p>
-                    </article>
-
-                    <article class="service-card reveal">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <h3 data-i18n="service_ui_title">UI Moderna</h3>
-                        <p data-i18n="service_ui_desc">Interfaces com visual atual, animações suaves, boa hierarquia e foco na usabilidade.</p>
-                    </article>
-                </div>
+                    </li>
+                    <li class="field reveal">
+                        <span class="field-num">06</span>
+                        <h3 data-i18n="service_ui_title">Interface</h3>
+                        <p data-i18n="service_ui_desc">Interfaces com hierarquia clara, animações discretas e foco total na usabilidade.</p>
+                    </li>
+                </ol>
             </div>
         </section>
 
-        <section class="section projects" id="projetos">
-            <div class="container">
-                <div class="section-title reveal">
+        <section class="section invert" id="projetos">
+            <div class="shell">
+                <div class="sec-head reveal">
+                    <span class="sec-num">04</span>
                     <h2 data-i18n="projects_title">Projetos</h2>
-                    <p data-i18n="projects_subtitle">Alguns trabalhos e ideias em desenvolvimento</p>
+                    <p class="sec-sub" data-i18n="projects_subtitle">Alguns trabalhos e ideias em desenvolvimento</p>
                 </div>
 
-                <div class="project-grid">
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>SistemaSolarIA</span></div>
-                        <div class="project-body">
-                            <h3>SistemaSolarIA</h3>
-                            <p data-i18n="project_solar_desc">Sistema voltado para geração e automação de documentos para projetos solares.</p>
-                            <div class="techs"><span>C#</span><span data-i18n="tech_pdf">PDF</span><span data-i18n="tech_automation">Automação</span></div>
-                            <span class="project-badge" data-i18n="project_pro_tag">Projeto profissional</span>
+                <ol class="works">
+                    <li class="work reveal">
+                        <span class="work-num">01</span>
+                        <div class="work-main">
+                            <h3 class="work-title">SistemaSolarIA</h3>
+                            <p class="work-desc" data-i18n="project_solar_desc">Sistema voltado para geração e automação de documentos para projetos solares.</p>
                         </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>Brawlsileirão</span></div>
-                        <div class="project-body">
-                            <h3>Brawlsileirão</h3>
-                            <p data-i18n="project_brawl_desc">Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.</p>
-                            <div class="techs"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
-                            <div class="project-actions">
-                                <button class="project-link project-preview" type="button"
-                                        data-video="assets/videos/brawlsileirao.mp4"
-                                        data-title="Brawlsileirão"
-                                        data-desc-pt="Brawlsileirão é um projeto web criado em parceria com o artista Gustavo Almeida, unindo programação e arte autoral. A proposta mistura o universo dos jogos com a temática do futebol brasileiro, resultando em uma experiência visual divertida e interativa. Foi desenvolvido do zero com JavaScript, HTML e CSS, com foco em animações, responsividade e uma identidade visual marcante."
-                                        data-desc-en="Brawlsileirão is a web project created in partnership with artist Gustavo Almeida, blending programming and original artwork. It mixes the gaming universe with the theme of Brazilian football, resulting in a fun and interactive visual experience. It was built from scratch with JavaScript, HTML and CSS, focusing on animations, responsiveness and a strong visual identity.">
-                                    <i class="fa-solid fa-play"></i> <span data-i18n="project_watch">Visualizar</span>
-                                </button>
-                                <a class="project-link" href="https://github.com/samuelsouzaleite/brawlsileirao" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
-                            </div>
+                        <ul class="work-stack">
+                            <li>C#</li>
+                            <li data-i18n="tech_pdf">PDF</li>
+                            <li data-i18n="tech_automation">Automação</li>
+                        </ul>
+                        <div class="work-actions">
+                            <span class="work-tag" data-i18n="project_pro_tag">Projeto profissional</span>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>Palavriado</span></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project_termo_title">Palavriado</h3>
-                            <p data-i18n="project_termo_desc">Aplicativo mobile inspirado no jogo Termo, desenvolvido com Flutter e Dart.</p>
-                            <div class="techs"><span>Flutter</span><span>Dart</span><span data-i18n="tech_mobile">Mobile</span></div>
-                            <div class="project-actions">
-                                <button class="project-link project-preview" type="button"
-                                        data-video="assets/videos/palavriado.mp4"
-                                        data-title="Palavriado"
-                                        data-desc-pt="Palavriado é um jogo de palavras para dispositivos móveis inspirado no clássico Termo (a versão brasileira do Wordle). O desafio é descobrir a palavra secreta em poucas tentativas, com dicas de cor a cada palpite. Foi desenvolvido com Flutter e Dart, com foco em uma interface fluida, responsiva e uma jogabilidade divertida."
-                                        data-desc-en="Palavriado is a mobile word game inspired by the classic Termo (the Brazilian version of Wordle). The goal is to guess the secret word in a few tries, with color hints on each guess. It was built with Flutter and Dart, focusing on a smooth, responsive interface and fun gameplay.">
-                                    <i class="fa-solid fa-play"></i> <span data-i18n="project_watch">Visualizar</span>
-                                </button>
-                                <a class="project-link" href="https://github.com/samuelsouzaleite/app_jogo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
-                            </div>
+                    <li class="work reveal">
+                        <span class="work-num">02</span>
+                        <div class="work-main">
+                            <h3 class="work-title">Brawlsileirão</h3>
+                            <p class="work-desc" data-i18n="project_brawl_desc">Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.</p>
                         </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>Unity 2D</span></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project_unity_title">Jogo 2D (Unity)</h3>
-                            <p data-i18n="project_unity_desc">Jogo 2D desenvolvido na engine Unity com C#, explorando mecânicas de gameplay, física e design de fases.</p>
-                            <div class="techs"><span>Unity</span><span>C#</span></div>
-                            <div class="project-actions">
-                                <button class="project-link project-preview" type="button"
-                                        data-video="assets/videos/Jogo-video-apresentacao.mp4"
-                                        data-title="Jogo 2D (Unity)"
-                                        data-desc-pt="Jogo 2D desenvolvido na engine Unity utilizando C#. O projeto explora mecânicas de plataforma, movimentação do personagem, colisões, física e design de fases. Foi criado com foco em aprender o fluxo de desenvolvimento de jogos na Unity, desde a construção do cenário até a lógica de gameplay e a interação."
-                                        data-desc-en="2D game developed in the Unity engine using C#. The project explores platform mechanics, character movement, collisions, physics and level design. It was built to learn the game development workflow in Unity, from building the scene to gameplay logic and interaction.">
-                                    <i class="fa-solid fa-play"></i> <span data-i18n="project_watch">Visualizar</span>
-                                </button>
-                                <a class="project-link" href="https://github.com/samuelsouzaleite/unity-jogo2D" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
-                            </div>
+                        <ul class="work-stack">
+                            <li>JavaScript</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                        <div class="work-actions">
+                            <button class="work-link project-preview" type="button"
+                                    data-video="assets/videos/brawlsileirao.mp4"
+                                    data-title="Brawlsileirão"
+                                    data-desc-pt="Brawlsileirão é um projeto web criado em parceria com o artista Gustavo Almeida, unindo programação e arte autoral. A proposta mistura o universo dos jogos com a temática do futebol brasileiro, resultando em uma experiência visual divertida e interativa. Foi desenvolvido do zero com JavaScript, HTML e CSS, com foco em animações, responsividade e uma identidade visual marcante."
+                                    data-desc-en="Brawlsileirão is a web project created in partnership with artist Gustavo Almeida, blending programming and original artwork. It mixes the gaming universe with the theme of Brazilian football, resulting in a fun and interactive visual experience. It was built from scratch with JavaScript, HTML and CSS, focusing on animations, responsiveness and a strong visual identity.">
+                                <span data-i18n="project_watch">Visualizar</span>
+                            </button>
+                            <a class="work-link" href="https://github.com/samuelsouzaleite/brawlsileirao" target="_blank" rel="noopener noreferrer">
+                                <span data-i18n="project_view">GitHub</span>
+                            </a>
                         </div>
-                    </article>
+                    </li>
 
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>Web PHP</span></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project_php_title">Site com PHP</h3>
-                            <p data-i18n="project_php_desc">Projeto web utilizando PHP, HTML e CSS para praticar estrutura e páginas dinâmicas.</p>
-                            <div class="techs"><span>PHP</span><span>HTML</span><span>CSS</span></div>
-                            <div class="project-actions">
-                                <button class="project-link project-preview" type="button"
-                                        data-video="assets/videos/sitephp.mp4"
-                                        data-title="Site com PHP"
-                                        data-desc-pt="Sistema web desenvolvido com PHP, HTML e CSS, com foco em cadastro de usuários e páginas dinâmicas. O projeto trabalha formulários, validação de dados e a integração entre back-end e front-end, aplicando a lógica do lado do servidor com PHP."
-                                        data-desc-en="Web system built with PHP, HTML and CSS, focused on user registration and dynamic pages. The project handles forms, data validation and back-end/front-end integration, applying server-side logic with PHP.">
-                                    <i class="fa-solid fa-play"></i> <span data-i18n="project_watch">Visualizar</span>
-                                </button>
-                                <a class="project-link" href="https://github.com/samuelsouzaleite/Site-com-PHP-HTML-E-CSS" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
-                            </div>
+                    <li class="work reveal">
+                        <span class="work-num">03</span>
+                        <div class="work-main">
+                            <h3 class="work-title" data-i18n="project_termo_title">Palavriado</h3>
+                            <p class="work-desc" data-i18n="project_termo_desc">Aplicativo mobile inspirado no jogo Termo, desenvolvido com Flutter e Dart.</p>
                         </div>
-                    </article>
-
-                    <article class="project-card reveal">
-                        <div class="project-image"><span>The Last of Us</span></div>
-                        <div class="project-body">
-                            <h3 data-i18n="project_tlou_title">Layout Responsivo</h3>
-                            <p data-i18n="project_tlou_desc">Página web responsiva com temática da série The Last of Us, focada em responsividade.</p>
-                            <div class="techs"><span>HTML</span><span>CSS</span><span data-i18n="tech_responsive">Responsivo</span></div>
-                            <div class="project-actions">
-                                <button class="project-link project-preview" type="button"
-                                        data-video="assets/videos/layoutresponsivo.mp4"
-                                        data-title="Layout Responsivo"
-                                        data-desc-pt="Página web responsiva com temática da série The Last of Us, desenvolvida com HTML e CSS. O foco do projeto é a responsividade: o layout se adapta de forma fluida a celular, tablet e desktop, mantendo uma boa experiência visual em qualquer tamanho de tela."
-                                        data-desc-en="Responsive web page themed around The Last of Us series, built with HTML and CSS. The project focuses on responsiveness: the layout adapts smoothly to mobile, tablet and desktop, keeping a good visual experience on any screen size.">
-                                    <i class="fa-solid fa-play"></i> <span data-i18n="project_watch">Visualizar</span>
-                                </button>
-                                <a class="project-link" href="https://github.com/samuelsouzaleite/Layout-Responsivo" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> <span data-i18n="project_view">Ver no GitHub</span></a>
-                            </div>
+                        <ul class="work-stack">
+                            <li>Flutter</li>
+                            <li>Dart</li>
+                            <li data-i18n="tech_mobile">Mobile</li>
+                        </ul>
+                        <div class="work-actions">
+                            <button class="work-link project-preview" type="button"
+                                    data-video="assets/videos/palavriado.mp4"
+                                    data-title="Palavriado"
+                                    data-desc-pt="Palavriado é um jogo de palavras para dispositivos móveis inspirado no clássico Termo (a versão brasileira do Wordle). O desafio é descobrir a palavra secreta em poucas tentativas, com dicas de cor a cada palpite. Foi desenvolvido com Flutter e Dart, com foco em uma interface fluida, responsiva e uma jogabilidade divertida."
+                                    data-desc-en="Palavriado is a mobile word game inspired by the classic Termo (the Brazilian version of Wordle). The goal is to guess the secret word in a few tries, with color hints on each guess. It was built with Flutter and Dart, focusing on a smooth, responsive interface and fun gameplay.">
+                                <span data-i18n="project_watch">Visualizar</span>
+                            </button>
+                            <a class="work-link" href="https://github.com/samuelsouzaleite/app_jogo" target="_blank" rel="noopener noreferrer">
+                                <span data-i18n="project_view">GitHub</span>
+                            </a>
                         </div>
-                    </article>
-                </div>
+                    </li>
 
-                <div class="projects-cta reveal">
-                    <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                        <i class="fa-brands fa-github"></i> <span data-i18n="projects_all">Ver todos no GitHub</span>
-                    </a>
+                    <li class="work reveal">
+                        <span class="work-num">04</span>
+                        <div class="work-main">
+                            <h3 class="work-title" data-i18n="project_unity_title">Jogo 2D (Unity)</h3>
+                            <p class="work-desc" data-i18n="project_unity_desc">Jogo 2D desenvolvido na engine Unity com C#, explorando mecânicas de gameplay, física e design de fases.</p>
+                        </div>
+                        <ul class="work-stack">
+                            <li>Unity</li>
+                            <li>C#</li>
+                        </ul>
+                        <div class="work-actions">
+                            <button class="work-link project-preview" type="button"
+                                    data-video="assets/videos/Jogo-video-apresentacao.mp4"
+                                    data-title="Jogo 2D (Unity)"
+                                    data-desc-pt="Jogo 2D desenvolvido na engine Unity utilizando C#. O projeto explora mecânicas de plataforma, movimentação do personagem, colisões, física e design de fases. Foi criado com foco em aprender o fluxo de desenvolvimento de jogos na Unity, desde a construção do cenário até a lógica de gameplay e a interação."
+                                    data-desc-en="2D game developed in the Unity engine using C#. The project explores platform mechanics, character movement, collisions, physics and level design. It was built to learn the game development workflow in Unity, from building the scene to gameplay logic and interaction.">
+                                <span data-i18n="project_watch">Visualizar</span>
+                            </button>
+                            <a class="work-link" href="https://github.com/samuelsouzaleite/unity-jogo2D" target="_blank" rel="noopener noreferrer">
+                                <span data-i18n="project_view">GitHub</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="work reveal">
+                        <span class="work-num">05</span>
+                        <div class="work-main">
+                            <h3 class="work-title" data-i18n="project_php_title">Site com PHP</h3>
+                            <p class="work-desc" data-i18n="project_php_desc">Projeto web utilizando PHP, HTML e CSS para praticar estrutura e páginas dinâmicas.</p>
+                        </div>
+                        <ul class="work-stack">
+                            <li>PHP</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                        </ul>
+                        <div class="work-actions">
+                            <button class="work-link project-preview" type="button"
+                                    data-video="assets/videos/sitephp.mp4"
+                                    data-title="Site com PHP"
+                                    data-desc-pt="Sistema web desenvolvido com PHP, HTML e CSS, com foco em cadastro de usuários e páginas dinâmicas. O projeto trabalha formulários, validação de dados e a integração entre back-end e front-end, aplicando a lógica do lado do servidor com PHP."
+                                    data-desc-en="Web system built with PHP, HTML and CSS, focused on user registration and dynamic pages. The project handles forms, data validation and back-end/front-end integration, applying server-side logic with PHP.">
+                                <span data-i18n="project_watch">Visualizar</span>
+                            </button>
+                            <a class="work-link" href="https://github.com/samuelsouzaleite/Site-com-PHP-HTML-E-CSS" target="_blank" rel="noopener noreferrer">
+                                <span data-i18n="project_view">GitHub</span>
+                            </a>
+                        </div>
+                    </li>
+
+                    <li class="work reveal">
+                        <span class="work-num">06</span>
+                        <div class="work-main">
+                            <h3 class="work-title" data-i18n="project_tlou_title">Layout Responsivo</h3>
+                            <p class="work-desc" data-i18n="project_tlou_desc">Página web responsiva com temática da série The Last of Us, focada em responsividade.</p>
+                        </div>
+                        <ul class="work-stack">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li data-i18n="tech_responsive">Responsivo</li>
+                        </ul>
+                        <div class="work-actions">
+                            <button class="work-link project-preview" type="button"
+                                    data-video="assets/videos/layoutresponsivo.mp4"
+                                    data-title="Layout Responsivo"
+                                    data-desc-pt="Página web responsiva com temática da série The Last of Us, desenvolvida com HTML e CSS. O foco do projeto é a responsividade: o layout se adapta de forma fluida a celular, tablet e desktop, mantendo uma boa experiência visual em qualquer tamanho de tela."
+                                    data-desc-en="Responsive web page themed around The Last of Us series, built with HTML and CSS. The project focuses on responsiveness: the layout adapts smoothly to mobile, tablet and desktop, keeping a good visual experience on any screen size.">
+                                <span data-i18n="project_watch">Visualizar</span>
+                            </button>
+                            <a class="work-link" href="https://github.com/samuelsouzaleite/Layout-Responsivo" target="_blank" rel="noopener noreferrer">
+                                <span data-i18n="project_view">GitHub</span>
+                            </a>
+                        </div>
+                    </li>
+                </ol>
+
+                <div class="works-cta reveal">
+                    <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" class="btn btn-solid" data-i18n="projects_all">Ver todos no GitHub</a>
                 </div>
             </div>
         </section>
 
-        <section class="section skills" id="habilidades">
-            <div class="container">
-                <div class="section-title reveal">
+        <section class="section" id="habilidades">
+            <div class="shell">
+                <div class="sec-head reveal">
+                    <span class="sec-num">05</span>
                     <h2 data-i18n="skills_title">Habilidades</h2>
-                    <p data-i18n="skills_subtitle">Tecnologias que fazem parte da minha rotina</p>
+                    <p class="sec-sub" data-i18n="skills_subtitle">Tecnologias que fazem parte da minha rotina</p>
                 </div>
 
-                <div class="skills-grid reveal">
-                    <div class="skill-item" data-skill-pt="Estruturação de páginas web semânticas." data-skill-en="Structuring semantic web pages.">
+                <div class="skills-list">
+                    <div class="skill-item reveal" data-skill-pt="Estruturação semântica de páginas, acessibilidade básica e HTML limpo." data-skill-en="Semantic page structure, basic accessibility and clean HTML.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-html">
-                            <i class="fa-brands fa-html5"></i><span>HTML</span>
+                            <span class="skill-name">HTML</span>
+                            <span class="skill-cat" data-i18n="cat_front">Front-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-html">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Estruturação de páginas web semânticas.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Estruturação semântica de páginas, acessibilidade básica e HTML limpo.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Estilização, responsividade e animações." data-skill-en="Styling, responsiveness and animations.">
+                    <div class="skill-item reveal" data-skill-pt="Layout, responsividade, animações e sistemas de design em CSS puro." data-skill-en="Layout, responsiveness, animation and design systems in plain CSS.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-css">
-                            <i class="fa-brands fa-css3-alt"></i><span>CSS</span>
+                            <span class="skill-name">CSS</span>
+                            <span class="skill-cat" data-i18n="cat_front">Front-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-css">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Estilização, responsividade e animações.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Layout, responsividade, animações e sistemas de design em CSS puro.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Interações, DOM e lógica front-end." data-skill-en="Interactions, DOM and front-end logic.">
+                    <div class="skill-item reveal" data-skill-pt="Interações, manipulação de DOM, consumo de APIs e lógica de front-end." data-skill-en="Interactions, DOM manipulation, API consumption and front-end logic.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-js">
-                            <i class="fa-brands fa-js"></i><span>JavaScript</span>
+                            <span class="skill-name">JavaScript</span>
+                            <span class="skill-cat" data-i18n="cat_front">Front-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-js">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Interações, DOM e lógica front-end.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Interações, manipulação de DOM, consumo de APIs e lógica de front-end.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Sistemas, aplicações e automações." data-skill-en="Systems, applications and automations.">
+                    <div class="skill-item reveal" data-skill-pt="Sistemas desktop, regras de negócio e automações corporativas." data-skill-en="Desktop systems, business rules and corporate automation.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-csharp">
-                            <i class="fa-solid fa-code"></i><span>C#</span>
+                            <span class="skill-name">C#</span>
+                            <span class="skill-cat" data-i18n="cat_back">Back-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-csharp">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Sistemas, aplicações e automações.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Sistemas desktop, regras de negócio e automações corporativas.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Scripts, lógica e manipulação de dados." data-skill-en="Scripts, logic and data manipulation.">
+                    <div class="skill-item reveal" data-skill-pt="Scripts, tratamento de dados e ferramentas internas de apoio." data-skill-en="Scripts, data processing and internal support tooling.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-python">
-                            <i class="fa-brands fa-python"></i><span>Python</span>
+                            <span class="skill-name">Python</span>
+                            <span class="skill-cat" data-i18n="cat_back">Back-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-python">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Scripts, lógica e manipulação de dados.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Scripts, tratamento de dados e ferramentas internas de apoio.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Consultas e manipulação de bancos de dados relacionais." data-skill-en="Querying and manipulating relational databases.">
-                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-sql">
-                            <i class="fa-solid fa-database"></i><span>SQL</span>
-                        </button>
-                        <div class="skill-panel" id="skill-panel-sql">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Consultas e manipulação de bancos de dados relacionais.</p></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-skill-pt="Páginas dinâmicas e aplicações web." data-skill-en="Dynamic pages and web applications.">
+                    <div class="skill-item reveal" data-skill-pt="Páginas dinâmicas, formulários e aplicações web server-side." data-skill-en="Dynamic pages, forms and server-side web applications.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-php">
-                            <i class="fa-brands fa-php"></i><span>PHP</span>
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-cat" data-i18n="cat_back">Back-end</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-php">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Páginas dinâmicas e aplicações web.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Páginas dinâmicas, formulários e aplicações web server-side.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Backend, autenticação e banco de dados na nuvem." data-skill-en="Backend, authentication and cloud database.">
+                    <div class="skill-item reveal" data-skill-pt="Modelagem, consultas e manipulação de bancos de dados relacionais." data-skill-en="Modeling, querying and handling relational databases.">
+                        <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-sql">
+                            <span class="skill-name">SQL</span>
+                            <span class="skill-cat" data-i18n="cat_data">Dados</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
+                        </button>
+                        <div class="skill-panel" id="skill-panel-sql">
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Modelagem, consultas e manipulação de bancos de dados relacionais.</p></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item reveal" data-skill-pt="Backend gerenciado, autenticação e banco de dados na nuvem." data-skill-en="Managed backend, authentication and cloud database.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-supabase">
-                            <i class="fa-solid fa-bolt"></i><span>Supabase</span>
+                            <span class="skill-name">Supabase</span>
+                            <span class="skill-cat" data-i18n="cat_data">Dados</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-supabase">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Backend, autenticação e banco de dados na nuvem.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Backend gerenciado, autenticação e banco de dados na nuvem.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Autenticação, banco em tempo real e hospedagem." data-skill-en="Authentication, realtime database and hosting.">
+                    <div class="skill-item reveal" data-skill-pt="Autenticação, banco em tempo real e hospedagem de aplicações." data-skill-en="Authentication, realtime database and app hosting.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-firebase">
-                            <i class="fa-solid fa-fire"></i><span>Firebase</span>
+                            <span class="skill-name">Firebase</span>
+                            <span class="skill-cat" data-i18n="cat_data">Dados</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-firebase">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Autenticação, banco em tempo real e hospedagem.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Autenticação, banco em tempo real e hospedagem de aplicações.</p></div>
                         </div>
                     </div>
 
-                    <div class="skill-item" data-skill-pt="Desenvolvimento de aplicativos mobile multiplataforma." data-skill-en="Cross-platform mobile app development.">
+                    <div class="skill-item reveal" data-skill-pt="Aplicativos multiplataforma com interface fluida para Android e iOS." data-skill-en="Cross-platform apps with fluid interfaces for Android and iOS.">
                         <button class="skill-toggle" type="button" aria-expanded="false" aria-controls="skill-panel-flutter">
-                            <i class="fa-solid fa-mobile-screen-button"></i><span>Flutter/Dart</span>
+                            <span class="skill-name">Flutter / Dart</span>
+                            <span class="skill-cat" data-i18n="cat_mobile">Mobile</span>
+                            <span class="skill-sign" aria-hidden="true"></span>
                         </button>
                         <div class="skill-panel" id="skill-panel-flutter">
-                            <div class="skill-panel-inner"><p class="skill-panel-text">Desenvolvimento de aplicativos mobile multiplataforma.</p></div>
+                            <div class="skill-panel-inner"><p class="skill-panel-text">Aplicativos multiplataforma com interface fluida para Android e iOS.</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section contact" id="contato">
-            <div class="container">
-                <div class="section-title reveal">
-                    <h2 data-i18n="contact_title">Vamos trabalhar juntos?</h2>
-                    <p data-i18n="contact_subtitle">Entre em contato comigo</p>
+        <section class="section section--band" id="contato">
+            <div class="shell">
+                <div class="sec-head reveal">
+                    <span class="sec-num">06</span>
+                    <h2 data-i18n="contact_title">Contato</h2>
+                    <p class="sec-sub" data-i18n="contact_subtitle">Aberto a oportunidades e parcerias</p>
                 </div>
 
-                <div class="contact-content">
-                    <div class="contact-info reveal">
-                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.samuelsl@gmail.com&su=Contato%20via%20portf%C3%B3lio" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-envelope"></i> contato.samuelsl@gmail.com</a>
-                        <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
-                        <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <div class="contact-grid">
+                    <div class="contact-aside reveal">
+                        <p class="contact-lead" data-i18n="contact_lead">Vamos construir alguma coisa juntos?</p>
+
+                        <ul class="contact-list">
+                            <li>
+                                <span class="contact-label">E-mail</span>
+                                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contato.samuelsl@gmail.com&su=Contato%20via%20portf%C3%B3lio" target="_blank" rel="noopener noreferrer" class="link-arrow">contato.samuelsl@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/samuelsouzaleite" target="_blank" rel="noopener noreferrer" class="link-arrow">@samuelsouzaleite</a>
+                            </li>
+                            <li>
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://www.linkedin.com/in/samuel-souza-leite-43281b252/" target="_blank" rel="noopener noreferrer" class="link-arrow">samuel-souza-leite</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <form class="contact-form reveal" id="contactForm">
-                        <input type="text" name="nome" placeholder="Seu nome" data-i18n-placeholder="form_name" required />
-                        <input type="email" name="email" placeholder="Seu e-mail" data-i18n-placeholder="form_email" required />
+                    <form class="contact-form reveal" style="--d:1" id="contactForm">
+                        <div class="field-row">
+                            <input type="text" name="nome" placeholder="Seu nome" data-i18n-placeholder="form_name" required />
+                            <input type="email" name="email" placeholder="Seu e-mail" data-i18n-placeholder="form_email" required />
+                        </div>
                         <input type="text" name="assunto" placeholder="Assunto" data-i18n-placeholder="form_subject" />
-                        <textarea name="mensagem" placeholder="Como posso ajudar?" rows="5" data-i18n-placeholder="form_message" required></textarea>
-                        <button type="submit" class="btn btn-primary" data-i18n="contact_btn">Enviar mensagem</button>
-                        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        <textarea name="mensagem" placeholder="Como posso ajudar?" rows="4" data-i18n-placeholder="form_message" required></textarea>
+                        <div class="form-footer">
+                            <button type="submit" class="btn btn-solid" data-i18n="contact_btn">Enviar mensagem</button>
+                            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -413,15 +511,27 @@
     </main>
 
     <footer class="footer">
-        <p>© <span id="year"></span> Samuel Souza Leite. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Samuel Souza Leite</span><span class="marquee-dot">◆</span>
+                <span>Fullstack</span><span class="marquee-dot">◆</span>
+                <span>Espírito Santo · Brasil</span><span class="marquee-dot">◆</span>
+                <span>Samuel Souza Leite</span><span class="marquee-dot">◆</span>
+                <span>Fullstack</span><span class="marquee-dot">◆</span>
+                <span>Espírito Santo · Brasil</span><span class="marquee-dot">◆</span>
+            </div>
+        </div>
+
+        <div class="shell footer-bar">
+            <p>© <span id="year"></span> Samuel Souza Leite. <span data-i18n="footer_rights">Todos os direitos reservados.</span></p>
+            <p data-i18n="footer_made">Feito à mão com HTML, CSS e JavaScript.</p>
+        </div>
     </footer>
 
     <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
         <div class="video-modal-backdrop" data-close></div>
         <div class="video-modal-box">
-            <button class="video-modal-close" type="button" data-close aria-label="Fechar">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <button class="video-modal-close" type="button" data-close aria-label="Fechar">&times;</button>
             <div class="video-modal-player">
                 <video id="videoModalPlayer" controls playsinline preload="metadata"></video>
             </div>

@@ -5,6 +5,7 @@ const typingText = document.getElementById("typingText");
 const skillItems = document.querySelectorAll(".skill-item");
 const langButtons = document.querySelectorAll(".lang-btn");
 const year = document.getElementById("year");
+const progressBar = document.getElementById("progress");
 const previewButtons = document.querySelectorAll(".project-preview");
 const videoModal = document.getElementById("videoModal");
 const videoModalPlayer = document.getElementById("videoModalPlayer");
@@ -34,19 +35,30 @@ const translations = {
         nav_skills: "Habilidades",
         nav_contact: "Contato",
 
-        hero_eyebrow: "# Olá, eu sou",
-        hero_description: "Desenvolvedor fullstack apaixonado por criar soluções web modernas, responsivas e funcionais, unindo design, performance e código limpo.",
+        wordmark_role: "Dev. Fullstack",
+
+        hero_eyebrow: "Desenvolvedor fullstack",
+        hero_place: "Espírito Santo, Brasil",
+        hero_status: "no momento",
+        hero_stamp: "desde 2003",
+        hero_email: "E-mail",
+        portrait_caption: "Samuel S. Leite, retrato",
+        hero_description: "Construo sistemas web, aplicações internas e automações que resolvem problemas reais de empresas — com a mesma atenção para a lógica do back-end e para o acabamento da interface.",
         hero_btn_projects: "Ver projetos",
         hero_btn_contact: "Fale comigo",
 
         about_title: "Sobre mim",
         about_subtitle: "Minha trajetória e motivação na tecnologia",
+        about_lead: "Nasci em 2003 e nunca soube ficar longe de um computador. Hoje transformo essa curiosidade em software que empresas usam todos os dias.",
         about_h3: "Desenvolvedor Fullstack em evolução constante",
-        about_p1: "Sou de 2003 e desde sempre fui apaixonado pelo mundo tecnológico. Meu primeiro contato com programação foi em 2022, quando ingressei no Centro Universitário do Espírito Santo (UNESC), e desde então venho estudando, praticando e desenvolvendo projetos para transformar ideias em soluções reais.",
-        about_p2: "Meus setores de atuação incluem desenvolvimento web, sistemas internos, automações e aplicações que melhoram processos dentro de empresas. Busco criar interfaces agradáveis, organizadas e responsivas, sem perder o foco na lógica e na funcionalidade.",
-        about_info_location: "Brasil",
+        about_p1: "Meu primeiro contato com programação foi em 2022, quando ingressei no Centro Universitário do Espírito Santo (UNESC). De lá para cá, foram anos estudando, praticando e desenvolvendo projetos para transformar ideias em soluções reais.",
+        about_p2: "Atuo em desenvolvimento web, sistemas internos, automações e aplicações que melhoram processos dentro de empresas. Busco interfaces agradáveis e organizadas, sem nunca perder o foco na lógica e na funcionalidade.",
+        about_label_location: "Local",
+        about_label_role: "Atuação",
+        about_label_edu: "Formação",
+        about_info_location: "Espírito Santo, Brasil",
         about_info_role: "Fullstack",
-        about_info_edu: "Sistemas de Informação",
+        about_info_edu: "Sistemas de Informação — UNESC",
 
         services_title: "Especializações",
         services_subtitle: "Áreas onde posso contribuir",
@@ -60,8 +72,8 @@ const translations = {
         service_auto_desc: "Automação de tarefas repetitivas e criação de ferramentas para melhorar processos.",
         service_resp_title: "Responsividade",
         service_resp_desc: "Layouts adaptáveis para celular, tablet e desktop, mantendo boa experiência visual.",
-        service_ui_title: "UI Moderna",
-        service_ui_desc: "Interfaces com visual atual, animações suaves, boa hierarquia e foco na usabilidade.",
+        service_ui_title: "Interface",
+        service_ui_desc: "Interfaces com hierarquia clara, animações discretas e foco total na usabilidade.",
 
         projects_title: "Projetos",
         projects_subtitle: "Alguns trabalhos e ideias em desenvolvimento",
@@ -71,7 +83,7 @@ const translations = {
         tech_mobile: "Mobile",
         tech_responsive: "Responsivo",
         project_pro_tag: "Projeto profissional",
-        project_view: "Ver no GitHub",
+        project_view: "GitHub",
         project_watch: "Visualizar",
         project_brawl_desc: "Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.",
         project_termo_title: "Palavriado",
@@ -86,9 +98,14 @@ const translations = {
 
         skills_title: "Habilidades",
         skills_subtitle: "Tecnologias que fazem parte da minha rotina",
+        cat_front: "Front-end",
+        cat_back: "Back-end",
+        cat_data: "Dados",
+        cat_mobile: "Mobile",
 
-        contact_title: "Vamos trabalhar juntos?",
-        contact_subtitle: "Entre em contato comigo",
+        contact_title: "Contato",
+        contact_subtitle: "Aberto a oportunidades e parcerias",
+        contact_lead: "Vamos construir alguma coisa juntos?",
         form_name: "Seu nome",
         form_email: "Seu e-mail",
         form_subject: "Assunto",
@@ -96,6 +113,7 @@ const translations = {
         contact_btn: "Enviar mensagem",
 
         footer_rights: "Todos os direitos reservados.",
+        footer_made: "Feito à mão com HTML, CSS e JavaScript.",
         form_sending: "Enviando...",
         form_success: "Mensagem enviada! Em breve retorno o contato.",
         form_error: "Não foi possível enviar. Tente novamente ou envie um e-mail diretamente.",
@@ -103,9 +121,9 @@ const translations = {
 
         typing: [
             "Desenvolvedor Fullstack",
-            "Desenvolvedor Web",
-            "Criador de Soluções Digitais",
-            "Apaixonado por Tecnologia"
+            "Sistemas internos e automações",
+            "Interfaces web sob medida",
+            "Estudante de Sistemas de Informação"
         ]
     },
 
@@ -117,19 +135,30 @@ const translations = {
         nav_skills: "Skills",
         nav_contact: "Contact",
 
-        hero_eyebrow: "# Hi, I'm",
-        hero_description: "Fullstack developer passionate about building modern, responsive and functional web solutions, blending design, performance and clean code.",
+        wordmark_role: "Fullstack Dev.",
+
+        hero_eyebrow: "Fullstack developer",
+        hero_place: "Espírito Santo, Brazil",
+        hero_status: "currently",
+        hero_stamp: "since 2003",
+        hero_email: "E-mail",
+        portrait_caption: "Samuel S. Leite, portrait",
+        hero_description: "I build web systems, internal applications and automations that solve real business problems — with the same care for back-end logic and interface craft.",
         hero_btn_projects: "View projects",
         hero_btn_contact: "Get in touch",
 
         about_title: "About me",
         about_subtitle: "My journey and motivation in technology",
+        about_lead: "I was born in 2003 and never learned how to stay away from a computer. Today I turn that curiosity into software companies use every day.",
         about_h3: "Fullstack developer in constant evolution",
-        about_p1: "I was born in 2003 and have always been passionate about the tech world. My first contact with programming was in 2022, when I joined Centro Universitário do Espírito Santo (UNESC), and since then I've been studying, practicing and building projects to turn ideas into real solutions.",
-        about_p2: "My areas of work include web development, internal systems, automations and applications that improve processes within companies. I aim to build pleasant, organized and responsive interfaces without losing focus on logic and functionality.",
-        about_info_location: "Brazil",
+        about_p1: "My first contact with programming was in 2022, when I joined Centro Universitário do Espírito Santo (UNESC). Since then, I've spent years studying, practicing and building projects to turn ideas into real solutions.",
+        about_p2: "I work on web development, internal systems, automations and applications that improve processes within companies. I aim for pleasant, well-organized interfaces without ever losing focus on logic and functionality.",
+        about_label_location: "Based in",
+        about_label_role: "Focus",
+        about_label_edu: "Education",
+        about_info_location: "Espírito Santo, Brazil",
         about_info_role: "Fullstack",
-        about_info_edu: "Information Systems",
+        about_info_edu: "Information Systems — UNESC",
 
         services_title: "Expertise",
         services_subtitle: "Areas where I can contribute",
@@ -143,8 +172,8 @@ const translations = {
         service_auto_desc: "Automating repetitive tasks and creating tools to improve processes.",
         service_resp_title: "Responsiveness",
         service_resp_desc: "Adaptable layouts for phone, tablet and desktop, keeping a great visual experience.",
-        service_ui_title: "Modern UI",
-        service_ui_desc: "Interfaces with a current look, smooth animations, good hierarchy and a focus on usability.",
+        service_ui_title: "Interface",
+        service_ui_desc: "Interfaces with clear hierarchy, restrained animation and full focus on usability.",
 
         projects_title: "Projects",
         projects_subtitle: "Some work and ideas in development",
@@ -154,7 +183,7 @@ const translations = {
         tech_mobile: "Mobile",
         tech_responsive: "Responsive",
         project_pro_tag: "Professional project",
-        project_view: "View on GitHub",
+        project_view: "GitHub",
         project_watch: "Preview",
         project_brawl_desc: "Web project made in partnership with artist Gustavo Almeida, blending code and original art.",
         project_termo_title: "Palavriado",
@@ -169,9 +198,14 @@ const translations = {
 
         skills_title: "Skills",
         skills_subtitle: "Technologies that are part of my routine",
+        cat_front: "Front-end",
+        cat_back: "Back-end",
+        cat_data: "Data",
+        cat_mobile: "Mobile",
 
-        contact_title: "Let's work together?",
-        contact_subtitle: "Get in touch with me",
+        contact_title: "Contact",
+        contact_subtitle: "Open to opportunities and partnerships",
+        contact_lead: "Shall we build something together?",
         form_name: "Your name",
         form_email: "Your e-mail",
         form_subject: "Subject",
@@ -179,6 +213,7 @@ const translations = {
         contact_btn: "Send message",
 
         footer_rights: "All rights reserved.",
+        footer_made: "Handcrafted with HTML, CSS and JavaScript.",
         form_sending: "Sending...",
         form_success: "Message sent! I'll get back to you soon.",
         form_error: "Couldn't send it. Please try again or e-mail me directly.",
@@ -186,9 +221,9 @@ const translations = {
 
         typing: [
             "Fullstack Developer",
-            "Web Developer",
-            "Digital Solutions Builder",
-            "Passionate about Technology"
+            "Internal systems & automation",
+            "Tailor-made web interfaces",
+            "Information Systems student"
         ]
     }
 };
@@ -277,14 +312,18 @@ function typeEffect() {
 }
 
 /* ---------- Menu mobile ---------- */
+function setMenu(open) {
+    navMenu.classList.toggle("open", open);
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.classList.toggle("nav-open", open);
+}
+
 menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
+    setMenu(!navMenu.classList.contains("open"));
 });
 
 navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-    });
+    link.addEventListener("click", () => setMenu(false));
 });
 
 /* ---------- Alternador de idioma ---------- */
@@ -308,6 +347,13 @@ function updateActiveLink() {
             if (activeLink) activeLink.classList.add("active");
         }
     });
+}
+
+/* ---------- Régua de progresso de leitura ---------- */
+function updateProgress() {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progressBar.style.transform = `scaleX(${Math.min(Math.max(ratio, 0), 1)})`;
 }
 
 /* ---------- Animações de revelação ---------- */
@@ -439,7 +485,12 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* ---------- Inicialização ---------- */
-window.addEventListener("scroll", updateActiveLink);
+window.addEventListener("scroll", () => {
+    updateActiveLink();
+    updateProgress();
+}, { passive: true });
+
 year.textContent = new Date().getFullYear();
 applyLanguage(currentLang);
 updateActiveLink();
+updateProgress();
