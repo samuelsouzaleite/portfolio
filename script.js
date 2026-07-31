@@ -40,10 +40,10 @@ const translations = {
         hero_eyebrow: "Desenvolvedor fullstack",
         hero_place: "Espírito Santo, Brasil",
         hero_status: "no momento",
-        hero_stamp: "desde 2003",
+        hero_stamp: "movido a curiosidade",
         hero_email: "E-mail",
         portrait_caption: "Samuel S. Leite, retrato",
-        hero_description: "Construo sistemas web, aplicações internas e automações que resolvem problemas reais de empresas — com a mesma atenção para a lógica do back-end e para o acabamento da interface.",
+        hero_description: "Construo sistemas web, aplicações internas e automações que resolvem problemas reais de empresas, com a mesma atenção para a lógica do back-end e para o acabamento da interface.",
         hero_btn_projects: "Ver projetos",
         hero_btn_contact: "Fale comigo",
 
@@ -123,7 +123,7 @@ const translations = {
             "Desenvolvedor Fullstack",
             "Sistemas internos e automações",
             "Interfaces web sob medida",
-            "Estudante de Sistemas de Informação"
+            "Especializando em C# e .NET"
         ]
     },
 
@@ -140,10 +140,10 @@ const translations = {
         hero_eyebrow: "Fullstack developer",
         hero_place: "Espírito Santo, Brazil",
         hero_status: "currently",
-        hero_stamp: "since 2003",
+        hero_stamp: "driven by curiosity",
         hero_email: "E-mail",
         portrait_caption: "Samuel S. Leite, portrait",
-        hero_description: "I build web systems, internal applications and automations that solve real business problems — with the same care for back-end logic and interface craft.",
+        hero_description: "I build web systems, internal applications and automations that solve real business problems, with the same care for back-end logic and interface craft.",
         hero_btn_projects: "View projects",
         hero_btn_contact: "Get in touch",
 
@@ -223,7 +223,7 @@ const translations = {
             "Fullstack Developer",
             "Internal systems & automation",
             "Tailor-made web interfaces",
-            "Information Systems student"
+            "Specializing in C# and .NET"
         ]
     }
 };
