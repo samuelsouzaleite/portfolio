@@ -808,10 +808,6 @@ button {
 }
 
 /* ---------------------------------------------------------------- habilidades */
-.skills-list {
-    border-top: 1px solid var(--rule-strong);
-}
-
 .skill-item {
     border-bottom: 1px solid var(--rule);
 }
