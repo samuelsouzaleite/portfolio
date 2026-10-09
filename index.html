@@ -11,6 +11,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Aplica o tema antes da pintura para evitar o "piscar" do tema claro -->
+    <script>
+        (function () {
+            var theme;
+            try { theme = localStorage.getItem("theme"); } catch (e) {}
+            if (theme !== "light" && theme !== "dark") {
+                theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+            document.documentElement.setAttribute("data-theme", theme);
+        })();
+    </script>
 </head>
 <body>
     <div class="grain" aria-hidden="true"></div>
@@ -38,6 +50,13 @@
                     <span class="lang-sep">/</span>
                     <button type="button" class="lang-btn" data-lang="en">en</button>
                 </div>
+
+                <button type="button" class="theme-toggle" id="themeToggle" aria-pressed="false" data-i18n-aria-label="theme_toggle" aria-label="Alternar tema escuro">
+                    <svg viewBox="0 0 16 16" aria-hidden="true">
+                        <circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5" />
+                        <path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor" />
+                    </svg>
+                </button>
 
                 <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navMenu">
                     <span></span>

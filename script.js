@@ -11,6 +11,8 @@ const videoModal = document.getElementById("videoModal");
 const videoModalPlayer = document.getElementById("videoModalPlayer");
 const videoModalTitle = document.getElementById("videoModalTitle");
 const videoModalDesc = document.getElementById("videoModalDesc");
+const themeToggle = document.getElementById("themeToggle");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
 /* ---------- Configuração de contato (Formspree) ----------
    Envio profissional, direto pelo site (sem abrir o provedor de e-mail) e com
@@ -77,6 +79,7 @@ const translations = {
         tech_responsive: "Responsivo",
         project_view: "GitHub",
         project_watch: "Visualizar",
+        theme_toggle: "Alternar tema escuro",
         project_brawl_desc: "Projeto web feito em parceria com o artista Gustavo Almeida, unindo código e arte autoral.",
         project_termo_title: "Palavriado",
         project_termo_desc: "Aplicativo mobile inspirado no jogo Termo, desenvolvido com Flutter e Dart.",
@@ -169,6 +172,7 @@ const translations = {
         tech_responsive: "Responsive",
         project_view: "GitHub",
         project_watch: "Preview",
+        theme_toggle: "Toggle dark theme",
         project_brawl_desc: "Web project made in partnership with artist Gustavo Almeida, blending code and original art.",
         project_termo_title: "Palavriado",
         project_termo_desc: "Mobile app inspired by the Wordle-style game 'Termo', built with Flutter and Dart.",
@@ -231,6 +235,11 @@ function applyLanguage(lang) {
         if (dict[key] !== undefined) el.placeholder = dict[key];
     });
 
+    document.querySelectorAll("[data-i18n-aria-label]").forEach((el) => {
+        const key = el.getAttribute("data-i18n-aria-label");
+        if (dict[key] !== undefined) el.setAttribute("aria-label", dict[key]);
+    });
+
     // Atualiza a descrição de cada habilidade no idioma novo
     skillItems.forEach((item) => {
         item.querySelector(".skill-panel-text").textContent =
@@ -251,6 +260,39 @@ function applyLanguage(lang) {
 
     localStorage.setItem("lang", lang);
 }
+
+/* ---------- Tema claro / escuro ----------
+   O tema inicial é aplicado por um script no <head> (evita piscar).
+   Sem escolha salva, o site segue o tema do sistema operacional. */
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+function getSavedTheme() {
+    try {
+        return localStorage.getItem("theme");
+    } catch (e) {
+        return null;
+    }
+}
+
+function applyTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+    themeToggle.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+    themeColorMeta.setAttribute("content", theme === "dark" ? "#16140f" : "#f2ede3");
+}
+
+themeToggle.addEventListener("click", () => {
+    const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+    try {
+        localStorage.setItem("theme", next);
+    } catch (e) {}
+});
+
+systemDark.addEventListener("change", (event) => {
+    if (!getSavedTheme()) applyTheme(event.matches ? "dark" : "light");
+});
+
+applyTheme(document.documentElement.getAttribute("data-theme") || "light");
 
 /* ---------- Efeito de digitação ---------- */
 let wordIndex = 0;
